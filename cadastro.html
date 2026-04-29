@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  font-family: Arial;
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 320px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #4e73df;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-link {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #4e73df;
+  color: #4e73df;
+  border-radius: 6px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.btn-link:hover {
+  background: #4e73df;
+  color: white;
+}
+
+.help-text {
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.help-text p {
+  margin: 4px 0;
+  color: gray;
+}
+
+.valido { color: green !important; }
+.invalido { color: red !important; }
+
+.links {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#msg {
+  text-align: center;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Criar Conta</h2>
+
+  <input id="email" placeholder="Email">
+  <input id="telefone" placeholder="Telefone">
+  <input id="cpf" placeholder="CPF">
+
+  <select id="instituicao">
+    <option value="">Selecione sua instituição</option>
+    <option>DOCTUM</option>
+    <option>LIBER</option>
+  </select>
+
+  <input id="senha" type="password" placeholder="Senha">
+  <input id="confirmarSenha" type="password" placeholder="Confirme a senha">
+
+  <div class="help-text">
+    <p id="regraTamanho">• Mínimo 8 caracteres</p>
+    <p id="regraMaiuscula">• Letra maiúscula</p>
+    <p id="regraNumero">• Número</p>
+    <p id="regraEspecial">• Símbolo permitido (! @ # $ % &)</p>
+    <p id="regraIgual">• Senhas conferem</p>
+  </div>
+
+  <button id="btnCadastrar" onclick="cadastrar()" disabled>Cadastrar</button>
+
+  <div class="links">
+    <button onclick="window.location.href='login.html'" class="btn-link">Entrar</button>
+    <a href="#">Esqueci minha senha</a>
+  </div>
+
+  <p id="msg"></p>
+</div>
+
+<script src="cadastro.js"></script>
+</body>
+</html>

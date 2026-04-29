@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  font-family: Arial;
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 320px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #4e73df;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-link {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #4e73df;
+  color: #4e73df;
+  border-radius: 6px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.btn-link:hover {
+  background: #4e73df;
+  color: white;
+}
+
+.links {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#msg {
+  text-align: center;
+  margin-top: 10px;
+  color: red;
+}
+
+.toggle-senha {
+  position: relative;
+}
+
+.toggle-senha span {
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #4e73df;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+  <h2>CONTROLE DE PRESENÇA 2K26</h2>
+
+  <input id="login" placeholder="Email, telefone ou CPF">
+
+  <div class="toggle-senha">
+    <input id="senha" type="password" placeholder="Senha">
+    <span onclick="toggleSenha()">ver</span>
+  </div>
+
+  <button id="btnEntrar" onclick="login()" disabled>Entrar</button>
+
+  <div class="links">
+    <button onclick="window.location.href='cadastro.html'" class="btn-link">Cadastrar</button>
+    <button class="btn-link">Esqueceu sua senha?</button>
+  </div>
+
+  <p id="msg"></p>
+</div>
+
+<script src="login.js"></script>
+
+<script>
+function toggleSenha() {
+  const input = document.getElementById("senha");
+  input.type = input.type === "password" ? "text" : "password";
+}
+</script>
+
+</body>
+</html>
