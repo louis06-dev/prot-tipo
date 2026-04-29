@@ -103,7 +103,7 @@ if(!loginInput.includes("@")){
     window.location.href = "presenca.html"; 
   }
 }
-
+//teste
 
 // ================= LOGOUT =================
 async function logout(){
